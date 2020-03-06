@@ -1,3 +1,7 @@
+body {
+	position: relative;
+}
+
 .fade {
   -webkit-animation-name: fade;
           animation-name: fade;
@@ -627,7 +631,7 @@ header ul li:before {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-.overlay .popup-close {
+.overlay .popup-close, .health .popup-close {
   position: absolute;
   right: -20px;
   top: -35px;
@@ -716,4 +720,45 @@ header ul li:before {
 }
 .overlay .popup-form__btn:hover {
   box-shadow: 0 0 10px #c78030;
+}
+
+.blackout {
+	background: rgba(0,0,0,.7);
+	display: none;
+	height: auto;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.health {
+	background: #c78030;
+	display: none;
+	font-size: 22px;
+	left: 15%;
+	line-height: 1.6;
+	margin: auto;
+	min-height: 40%;
+	padding: 35px;
+	position: fixed;
+	top: 30%;
+	width: 70%;
+	z-index: 2;
+}
+
+.health .popup-close {
+	font-size: 50px;
+	right: -36px;
+    top: -59px;
+}
+
+/* Домашнее задание */
+#age {
+	bottom: 1%;
+	font-size: 16px;
+	left: 20%;
+	padding: 10px;
+	position: absolute;
 }
