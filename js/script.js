@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		function updateClock() { // вызов функции каждую секунду
 			let t = getTimeRemaining(endtime);
 			
-			if (t.hours < 10) {
+			/* if (t.hours < 10) { // 1-й способ учёта нуля (стр. 67-81)
 				t.hours = "0" + t.hours;
 			}
 			
@@ -74,14 +74,27 @@ window.addEventListener("DOMContentLoaded", function() {
 			
 			if (t.seconds < 10) {
 				t.seconds = "0" + t.seconds;
-			}
+			} */
 			
-			hours.textContent = t.hours; // запись ч, м, с, полученная из объекта (стр. 50 - 53)
+			/* hours.textContent = t.hours; // запись ч, м, с, полученная из объекта (стр. 50 - 53)
 			minutes.textContent = t.minutes;
-			seconds.textContent = t.seconds;
+			seconds.textContent = t.seconds; */
+			
+			function addZero(num){ // 2-й способ учёта нуля (стр. 83-94)
+				if (num <= 9) {
+					return '0' + num;
+				} else return num;
+			};
+			
+			hours.textContent = addZero(t.hours);
+            minutes.textContent = addZero(t.minutes);
+            seconds.textContent = addZero(t.seconds);
 			
 			if (t.total <= 0) {
 				clearInterval(timeInterval);
+				hours.textContent = '00';
+                minutes.textContent = '00';
+                seconds.textContent = '00';
 			}
 		}
 	}
