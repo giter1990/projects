@@ -762,3 +762,12 @@ header ul li:before {
 	padding: 10px;
 	position: absolute;
 }
+
+/* Домашнее задание (урок 3.15) */
+.location {
+	background: #fff;
+	bottom: 5px;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+}
